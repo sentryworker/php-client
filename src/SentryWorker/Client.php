@@ -1,6 +1,7 @@
 <?php
 
 namespace SentryWorker;
+
 use SentryWorker\Exception\ClientException;
 
 /**
@@ -118,7 +119,7 @@ class Client
             $params['id_order'] = $orderId;
         }
 
-        $result = $this->getRequest()->post('http://localhost:8080/api/order/', $params);
+        $result = $this->getRequest()->post('https://sentryworker.com/api/order/', $params);
 
         return $result['id_trx'];
     }

@@ -6,14 +6,14 @@ use SentryWorker\Client;
 use SentryWorker\Exception\ClientException;
 
 $client = new Client(array(
-    'app_key' => '71F60EA8AD9720EB704C6E7890EE1683',
-    'app_secret' => '731BCB68B3BFC594886604E6D7C2E93D',
+    'app_key' => '153A04124AE6A6BDEE2358A39987E040',
+    'app_secret' => 'BD2B007B5F32B6E70D367FC1C28000BF',
 ));
 
-$client->setSessionId('4182107525192d99e922f932da4e2338c45f9b60d2cd6ff91cba15cebfcfdca5');
+$client->setSessionId('75a525a3202db7b57d3255e549cb24300d3de0abc7d9d22eab46e643184ed28e');
 
 try {
-    var_dump($client->sendToReview('666'));
+    var_dump($client->sendToReview('999'));
 } catch (ClientException $e) {
     echo $e->getCode();
     echo $e->getMessage();
