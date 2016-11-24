@@ -6,17 +6,21 @@
     "sentryworker",
     "client"
   ],
+  "type": "library",
+  "homepage": "https://github.com/sentryworker/php-client",
   "authors": [
     {
       "name": "Alexey Bulygin",
       "email": "sentryworker@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "php": "^5.3|^7.0"
+  },
   "require-dev": {},
   "autoload": {
     "psr-4": {
-      "SentryWorker\\": "src"
+      "SentryWorker\\": "src/SentryWorker"
     }
   }
 }
