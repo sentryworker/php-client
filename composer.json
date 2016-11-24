@@ -8,6 +8,7 @@
   ],
   "type": "library",
   "homepage": "https://github.com/sentryworker/php-client",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Alexey Bulygin",
