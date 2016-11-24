@@ -1,0 +1,22 @@
+{
+  "name": "sentryworker/client",
+  "description": "Client for SentryWorker service",
+  "license": "MIT",
+  "keywords": [
+    "sentryworker",
+    "client"
+  ],
+  "authors": [
+    {
+      "name": "Alexey Bulygin",
+      "email": "sentryworker@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {},
+  "autoload": {
+    "psr-4": {
+      "SentryWorker\\": "src"
+    }
+  }
+}
