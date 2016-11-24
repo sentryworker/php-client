@@ -18,6 +18,12 @@
     "php": "^5.3|^7.0"
   },
   "require-dev": {},
+  "repositories": [
+    {
+      "type": "vcs",
+      "url":  "https://github.com/sentryworker/php-client.git"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "SentryWorker\\": "src/SentryWorker/"
