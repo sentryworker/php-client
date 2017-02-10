@@ -31,7 +31,12 @@ class Client
     {
         $this->setAppKey($config['app_key']);
         $this->setAppSecret($config['app_secret']);
-        $this->setRequest(new Request());
+
+        if (!empty($config['curl_opts'])) {
+            $this->setRequest(new Request($config['curl_opts']));
+        } else {
+            $this->setRequest(new Request());
+        }
 
         if (!empty($_COOKIE['id_sentry_sess'])) {
             $this->setSessionId($_COOKIE['id_sentry_sess']);
@@ -119,7 +124,7 @@ class Client
             $params['id_order'] = $orderId;
         }
 
-        $result = $this->getRequest()->post('https://sentryworker.com/api/order/', $params);
+        $result = $this->getRequest()->post('https://doriddle.net/api/order/', $params);
 
         return $result['id_trx'];
     }

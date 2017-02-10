@@ -30,10 +30,14 @@ use SentryWorker\Exception\ClientException;
 $client = new Client(array(
     'app_key' => 'APP_KEY',
     'app_secret' => 'APP_SECRET',
+    'curl_opts' => array(
+        'connection_timeout' => 1,
+        'read_timeout' => 1,
+    )
 ));
 
 try {
-    $trxId = $client->sendToReview('8347238479237427');
+    $trxId = $client->sendToReview('orderId');
     echo $trxId;
 } catch (ClientException $e) {
     echo $e->getCode();

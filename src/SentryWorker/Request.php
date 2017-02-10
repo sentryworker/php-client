@@ -11,11 +11,22 @@ use SentryWorker\Exception\ClientException;
 class Request
 {
     public static $CURL_OPTS = array(
-        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_CONNECTTIMEOUT => 1,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 60,
+        CURLOPT_TIMEOUT => 1,
         CURLOPT_USERAGENT => 'sentry_client_php'
     );
+
+    public function __construct($curl_opts = array())
+    {
+        if (!empty($curl_opts['connection_timeout'])) {
+            self::$CURL_OPTS[CURLOPT_CONNECTTIMEOUT] = $curl_opts['connection_timeout'];
+        }
+
+        if (!empty($curl_opts['read_timeout'])) {
+            self::$CURL_OPTS[CURLOPT_TIMEOUT] = $curl_opts['read_timeout'];
+        }
+    }
 
     /**
      * @param string $url
